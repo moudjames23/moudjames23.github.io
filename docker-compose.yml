@@ -3,12 +3,13 @@ version: '3.8'
 services:
 
   mkdocs:
-    build: ./
+    image: moudjames23/github-pages
     networks:
       - default
-
-
+    ports:
+      - 8000:800
 
 
 networks:
   default:
+    name: mkdocs_network
