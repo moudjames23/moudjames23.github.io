@@ -23,7 +23,7 @@ jobs:
       - name: Build & push Docker image
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
-          image: moudjames23/moudjames_github_io
+          image: moudjames23/github-pages
           tags: latest
           registry: docker.io
           dockerfile: Dockerfile
