@@ -12,7 +12,7 @@ jobs:
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
           image: devops/moud
-          tags: ${{ GITHUB_REF_NAME }}
+          tags: ${{ github.ref_name }}
           registry: registry.octa-solutions.tech
           dockerfile: Dockerfile
           username: ${{ secrets.OCTA_REGISTRY_USERNAME }}
