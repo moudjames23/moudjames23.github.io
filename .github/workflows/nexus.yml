@@ -1,0 +1,19 @@
+name: CD/CI
+on:
+  - push
+jobs:
+  Mkdocs-project:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Clone repository"
+        uses: actions/checkout@v3
+
+      - name: Build & push Docker image
+        uses: mr-smithers-excellent/docker-build-push@v5
+        with:
+          image: devops/moud
+          tags: latest
+          registry: registry.octa-solutions.tech
+          dockerfile: Dockerfile
+          username: ${{ secrets.OCTA_REGISTRY_USERNAME }}
+          password: ${{ secrets.OCTA_REGISTRY_PASSWORD }}
