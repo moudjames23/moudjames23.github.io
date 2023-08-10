@@ -2,7 +2,7 @@ name: CD/CI
 on:
   - push
 jobs:
-  Mkdocs-project:
+  Nexus-build:
     runs-on: ubuntu-latest
     steps:
       - name: "Clone repository"
